@@ -1,26 +1,20 @@
-# Use official Node.js image as base
-FROM node:16
+# Use official Node.js image
+FROM node:18-alpine
 
-# Set the working directory inside the container
-WORKDIR /usr/src/app
+# Set working directory
+WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock) into the container
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy all source files into the container
+# Copy the entire backend folder
 COPY . .
 
-# Expose the port the backend will run on (5000 for example)
+# Expose the port
 EXPOSE 5000
 
-# Set the environment variable (optional, can be done in docker-compose)
-# ENV NODE_ENV=production  # Uncomment for production environment
-
-# For development, use nodemon:
-CMD ["npm", "run", "dev"]
-
-# For production, you could change it to:
-# CMD ["npm", "start"]
+# Start the server
+CMD ["node", "app.js"]
