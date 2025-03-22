@@ -51,8 +51,8 @@ Ensure you have the following installed:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ai-fake-news-detector.git
-cd ai-fake-news-detector
+git clone https://github.com/Kolexx/AI-FakeNews-Detector
+cd AI-FakeNews-Detector
 ```
 
 ### 2️⃣ Backend Setup
@@ -65,7 +65,7 @@ npm install
 Create a **.env** file:
 ```plaintext
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/fakeNewsDB
+MONGODB_URI=your_db_url
 HUGGINGFACE_API_KEY=your_huggingface_api_key
 ```
 
